@@ -125,3 +125,32 @@ var addClickHandler = function(i, j){
 		}
 	});
 };
+
+var addDoubleClickHandler = function(i, j){
+	$('div#' + i.toString() + "r" + j.toString()).dblclick(function(){
+		if (gameSongs[$('div#' + i.toString() + "r" + j.toString()).text()] && lives && i.toString() + j.toString() == spacePos){
+			$('div#' + i.toString() + "r" + j.toString()).css("color", "#5dfc0a");
+			$('div#' + i.toString() + "r" + j.toString()).text(" ");
+			if (++numCorrect == numToWin){
+				celebrate();
+			}
+		}
+		else if (i.toString() + j.toString() == spacePos && lives){
+		
+			$('div#' + i.toString() + "r" + j.toString()).text("Wrong!");
+			$('div#' + i.toString() + "r" + j.toString()).css("color", "red");
+			lifeCheck(--lives); 
+		}
+		
+			                    										});
+
+};
+
+var stateChange = function(){
+	for (var i = 0; i < rows; i++){
+		for (var j = 0; j < cols; j++){
+			addClickHandler(i, j);
+			addDoubleClickHandler(i, j);
+		}
+	}
+};
