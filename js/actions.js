@@ -89,16 +89,7 @@ var prize3Action = function(){
 	return 3;
 };
 var prizeActions = [prize1Action, prize2Action, prize3Action];
-/*
-var addPrizeClickHandler = function(prizeClicks){
-	var j = 0;
-	for (var i = 0; i < prizeClicks; i++){
-		$('#prizeClick' + (i + 1)).click(function(){
-			$('div#prize' + (++j)).css("visibility", "visible");
-		});
-	}
-}(3);
-*/
+
 $('#prizeClick1').click(function(){
 			$('div#prize1').css("visibility", "visible");
 		});
@@ -170,8 +161,6 @@ var lifeCheck = function(lives, hit){
 	setTimeout(function(){
 		placeSpaceship(spacePos, "test");
 		placeSpaceship(badGuyPos1, "badGuy1");}, 1050);
-	//placeSpaceship(spacePos, "test");
-	//placeSpaceship(badGuyPos1, "badGuy1");
 }
 
 var moveBadGuys = function(id){
@@ -182,7 +171,6 @@ var moveBadGuys = function(id){
 	rowOrCol = Math.floor(Math.random()*2) == 0 ? true : false;
 	nextBadRow = rowOrCol ? ((rows + badCurRow + moves[Math.floor(Math.random()*2)])%rows).toString() : badCurRow.toString();
 	nextBadCol = !rowOrCol ? ((cols + badCurCol + moves[Math.floor(Math.random()*2)])%cols).toString() : badCurCol.toString();
-	//alert("Next Row: " + nextRow + "Next Col: " + nextCol);
 	placeBadGuy(nextBadRow + nextBadCol, id);
 };
 
@@ -224,10 +212,7 @@ var celebrate = function(){
 			winner_text += "<span id=\"stars\"> &#9733 </span>"
 
 		$('#game_over').html(winner_text);
-		//alert("You Win-- You really know Bob!");
 }, 200);
-	//$('div#celebrate').css('visibility', 'visible')
-
 }
 
 var spaceCheck = setInterval(function(){
@@ -235,8 +220,6 @@ var spaceCheck = setInterval(function(){
 		if (!isBlue){
 			die();
 			lifeCheck(--lives, true);
-			//clearInterval(moves);
-			//clearInterval(spaceCheck);
 		}
 		else{
 			if (!badGuyDead){
@@ -252,11 +235,8 @@ var spaceCheck = setInterval(function(){
 var munchCheck = function(){
 	if (gameSongs[$('div#' + spacePos[0] + "r" + spacePos[1]).text()] && lives){
 		++numCorrect;
-		//if (numCorrect < numToWin)  
-			//setTimeout(function(){evalSound('correct')}, 200);
 		var current_height = document.getElementById('progress').style.height;
 		var current_top = document.getElementById('progress').style.top;
-		//console.log(current_height);
 		$('div#' + spacePos[0] + "r" + spacePos[1]).css("color", "#5dfc0a");
 		setTimeout(function(){$('div#' + spacePos[0] + "r" + spacePos[1]).text(" ");}, 30);
 		$('div#progress').css("top", parseInt(current_top) - progressTotalHeight/numToWin/1.01);
