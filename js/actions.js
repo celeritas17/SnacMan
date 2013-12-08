@@ -78,11 +78,11 @@ var prize2Action = function(){
 	return 2;
 };
 var prize3Action = function(){
-	document.getElementById("badGuy1").src = "ufo_blue.jpg";
+	document.getElementById("badGuy1").src = "../img/ufo_blue.jpg";
 	isBlue = true;
 	setTimeout(function(){
 		if (!badGuyDead){
-			document.getElementById("badGuy1").src = "ufo.jpg";
+			document.getElementById("badGuy1").src = "../img/ufo.jpg";
 			isBlue = false;
 		}
 	}, 10000);
