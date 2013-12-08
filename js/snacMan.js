@@ -33,18 +33,17 @@ Object.keys = Object.keys || (function () {
     };
 })();
 
-function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-    return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-
 var score = 0;
 var badGuyPos2 = "99";
 var isBlue = false;
 var badGuyDead = false;
 var chewable = true;
+
+var puzzle = getParameterByName("name");
+var gameSongs = games[puzzle]["puzzle"];
+$("#munchers").text(games[puzzle]["title"]);
+
+var songs = Object.keys(gameSongs);
 
 drawLives(2);
 
