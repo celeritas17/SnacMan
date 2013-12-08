@@ -52,7 +52,7 @@ var drawLives = function(lives){
 	//var lives_offset_top = top_offset + rows*dim/2;
 	var lives_offset_top = 400;
 	for (var i = 0; i < lives; i++){
-		document.write("<img src=\"../img/muncher.jpg\" id=\"life" + i + "\" style=\"top:" + lives_offset_top + "px; left:" + (lives_offset_left + i*100) + "px;\" />");
+		document.write("<img src=\"img/muncher.jpg\" id=\"life" + i + "\" style=\"top:" + lives_offset_top + "px; left:" + (lives_offset_left + i*100) + "px;\" />");
 	}
 }
 
@@ -61,7 +61,7 @@ var drawPrizeClicks = function(prizes){
 	//var prizeArray = ["snacBadGuy.png", "snacRemove.png", "snacTime.png"];
 	var prizes_offset_top = 30;
 	for (var i = 0; i < prizes; i++){
-		document.write("<img src=\"../img/circle.svg\" id=\"prizeClick" + (i + 1) + "\" style=\"top:" + prizes_offset_top + "px; left:" + (prizes_offset_left + i*100) + "px;\" />");
+		document.write("<img src=\"img/circle.svg\" id=\"prizeClick" + (i + 1) + "\" style=\"top:" + prizes_offset_top + "px; left:" + (prizes_offset_left + i*100) + "px;\" />");
 	}
 }(3);
 
@@ -90,8 +90,8 @@ var drawBoard = function(){
 		top_offset += dim;
 	}
 	document.write("</div>");
-	document.write("<img id=\"test\" src=\"../img/eat/eat1.png\" />");
-	document.write("<img id=\"badGuy1\" src=\"../img/ufo.jpg\" />");
+	document.write("<img id=\"test\" src=\"img/eat/eat1.png\" />");
+	document.write("<img id=\"badGuy1\" src=\"img/ufo.jpg\" />");
 	//document.write("<img id=\"badGuy2\" src=\"ufo.jpg\" />");
 };
 
