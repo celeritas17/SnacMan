@@ -32,20 +32,9 @@ var findNumToWin = function(obj){
 	return numToWin; 
 }
 
-//console.log(findNumToWin(gameSongs));
 numToWin = findNumToWin(gameSongs);
 
 document.write("<div id=\"celebrate\"><h2>You Win!</h2></div>");
-
-/*var SetCorrectSongs = function(){
-	correct = {}
-	for (var i = 0; i < correct_songs.length; i++){
-		correct[correct_songs[i]] = 1;
-	}
-	return correct;
-}
-
-var correct = SetCorrectSongs();*/
 
 var drawLives = function(lives){
 	var lives_offset_left = left_offset + cols*dim + dim/2;
@@ -92,7 +81,6 @@ var drawBoard = function(){
 	document.write("</div>");
 	document.write("<img id=\"test\" src=\"img/eat/eat1.png\" />");
 	document.write("<img id=\"badGuy1\" src=\"img/ufo.jpg\" />");
-	//document.write("<img id=\"badGuy2\" src=\"ufo.jpg\" />");
 };
 
 var placeSpaceship = function(ufo, id){
