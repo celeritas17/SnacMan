@@ -1,3 +1,9 @@
+var puzzle = getParameterByName("name");
+var gameSongs = games[puzzle]["puzzle"];
+$("#munchers").text(games[puzzle]["title"]);
+
+var songs = Object.keys(gameSongs);
+
 rows = 4;
 cols = 5;
 var progressTotalHeight = window.innerHeight/1.8;

@@ -46,12 +46,6 @@ var isBlue = false;
 var badGuyDead = false;
 var chewable = true;
 
-var puzzle = getParameterByName("name");
-var gameSongs = games[puzzle]["puzzle"];
-$("#munchers").text(games[puzzle]["title"]);
-
-var songs = Object.keys(gameSongs);
-
 drawLives(2);
 
 drawBoard();
@@ -64,3 +58,4 @@ var moves = setInterval(function(){
     moveBadGuys("badGuy1");
     //moveBadGuys("badGuy2");
     }, 1500);
+
