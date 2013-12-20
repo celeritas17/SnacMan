@@ -38,6 +38,8 @@ var badGuyPos2 = "99";
 var isBlue = false;
 var badGuyDead = false;
 var chewable = true;
+var prize1Chewable = false;
+var chewablePrizes = [false, false, false];
 
 var puzzle = getParameterByName("name");
 var gameSongs = games[puzzle]["puzzle"];

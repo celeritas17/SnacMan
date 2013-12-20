@@ -282,10 +282,10 @@ onkeydown = function(e){
 		}
 	}
 	else if (e.keyCode == '32'){
-		chew();
 		//evalSound('nom');
 		for (var i = 1; i <= 3; i++){
 			if ((parseInt($('#test').css("left")) == parseInt($('#prize' + i).css("left"))) && (parseInt($('#test').css("top"))) == parseInt($('#prize' + i).css("top"))){
+				chew();
 				score += 150;
 				$('#prize' + i).css("visibility", "hidden");
 				prizeActions[i - 1]();
