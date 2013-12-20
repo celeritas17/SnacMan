@@ -285,22 +285,11 @@ onkeydown = function(e){
 	else if (e.keyCode == '40'){
 		placeSpaceship((++curRow%rows).toString() + curCol.toString(), "test");
 	}
-	else if (e.keyCode == '13'){
+	else if (e.keyCode == '13' || e.keyCode == '32'){
 			if (chewable){
 			chew();
 			//evalSound('nom');
 			munchCheck();
-		}
-	}
-	else if (e.keyCode == '32'){
-		//evalSound('nom');
-		for (var i = 1; i <= 3; i++){
-			if ((parseInt($('#test').css("left")) == parseInt($('#prize' + i).css("left"))) && (parseInt($('#test').css("top"))) == parseInt($('#prize' + i).css("top"))){
-				chew();
-				score += 150;
-				$('#prize' + i).css("visibility", "hidden");
-				prizeActions[i - 1]();
-			}
 		}
 	}
 }
