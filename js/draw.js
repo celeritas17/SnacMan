@@ -21,7 +21,6 @@ var top_offset = window.innerHeight/9.5;
 var dim = window.innerHeight/cols;
 spacePos = "00";
 badGuyPos1 = "33";
-//badGuyPos2 = "33";
 var lives = 3;
 var numCorrect = 0;
 var findNumToWin = function(obj){
@@ -38,7 +37,6 @@ document.write("<div id=\"celebrate\"><h2>You Win!</h2></div>");
 
 var drawLives = function(lives){
 	var lives_offset_left = left_offset + cols*dim + dim/2;
-	//var lives_offset_top = top_offset + rows*dim/2;
 	var lives_offset_top = 400;
 	for (var i = 0; i < lives; i++){
 		document.write("<img src=\"img/muncher.jpg\" id=\"life" + i + "\" style=\"top:" + lives_offset_top + "px; left:" + (lives_offset_left + i*100) + "px;\" />");
@@ -47,7 +45,6 @@ var drawLives = function(lives){
 
 var drawPrizeClicks = function(prizes){
 	var prizes_offset_left = left_offset + cols*dim + dim/2;
-	//var prizeArray = ["snacBadGuy.png", "snacRemove.png", "snacTime.png"];
 	var prizes_offset_top = 30;
 	for (var i = 0; i < prizes; i++){
 		document.write("<img src=\"img/circle.svg\" id=\"prizeClick" + (i + 1) + "\" style=\"top:" + prizes_offset_top + "px; left:" + (prizes_offset_left + i*100) + "px;\" />");
