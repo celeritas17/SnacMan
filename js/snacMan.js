@@ -40,7 +40,7 @@ var badGuyDead = false;
 var chewable = true;
 var prize1Chewable = false;
 var chewablePrizes = [false, false, false];
-var var availablePrizes = [true, true, true];
+var availablePrizes = [true, true, true];
 
 var puzzle = getParameterByName("name");
 var gameSongs = games[puzzle]["puzzle"];
