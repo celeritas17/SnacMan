@@ -42,8 +42,6 @@ var prize1Action = function(){
 	var current_top = document.getElementById('progress').style.top;
 	var wrongAnswers = [];
 	for (i in games[puzzle].puzzle){
-		//console.log(i);
-		//console.log(games[puzzle]["puzzle"][i]);
 		if(games[puzzle]["puzzle"][i] == 0){ 
 			wrongAnswers.push(i);
 		}
@@ -64,7 +62,6 @@ var prize1Action = function(){
 	return 1;
 }
 var prize2Action = function(){
-	//clearInterval(clock);
 	clearInterval(blink);
 	blinking = false;
 	$('#timer').css("visibility", "visible");
@@ -253,8 +250,6 @@ var munchCheck = function(){
 		$('div#' + spacePos[0] + "r" + spacePos[1]).css("color", "red");
 		lifeCheck(--lives);
 		die();
-		//$("#life" + (lives - 1)).css("visibility", "hidden");
-		//console.log(document.getElementById("life0").style.visibility);// = "hidden";
 	}
 	else{
 		clearInterval(clock);
