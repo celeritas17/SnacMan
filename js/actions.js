@@ -213,6 +213,17 @@ var celebrate = function(){
 }
 
 var spaceCheck = setInterval(function(){
+	for (var i = 1; i <= 3; i++){
+			if ((parseInt($('#test').css("left")) == parseInt($('#prize' + i).css("left"))) && (parseInt($('#test').css("top"))) == parseInt($('#prize' + i).css("top"))){
+				if (chewablePrizes[i - 1]){
+					chew();
+					score += 150;
+					$('#prize' + i).css("visibility", "hidden");
+					prizeActions[i - 1]();
+				}
+			}
+		}
+
 	if (spacePos == badGuyPos1){
 		if (!isBlue){
 			die();
