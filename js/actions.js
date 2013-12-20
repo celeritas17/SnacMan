@@ -90,19 +90,16 @@ var prizeActions = [prize1Action, prize2Action, prize3Action];
 $('#prizeClick1').click(function(){
 			$('div#prize1').css("visibility", "visible");
 			chewablePrizes[0] = true;
-			availablePrizes[0] = false;
 		});
 
 $('#prizeClick2').click(function(){
 			$('div#prize2').css("visibility", "visible");
 			chewablePrizes[1] = true;
-			availablePrizes[1] = false;
 		});
 
 $('#prizeClick3').click(function(){
 			$('div#prize3').css("visibility", "visible");
 			chewablePrizes[2] = true;
-			availablePrizes[2] = false;
 		});
 
 var addClickHandler = function(i, j){
@@ -221,7 +218,8 @@ var celebrate = function(){
 var spaceCheck = setInterval(function(){
 	for (var i = 1; i <= 3; i++){
 			if ((parseInt($('#test').css("left")) == parseInt($('#prize' + i).css("left"))) && (parseInt($('#test').css("top"))) == parseInt($('#prize' + i).css("top"))){
-				if (chewablePrizes[i - 1]){
+				if (chewablePrizes[i - 1] && availablePrizes[i - 1]){
+					availablePrizes[i - 1] = false;
 					chew();
 					score += 150;
 					$('#prize' + i).css("visibility", "hidden");
