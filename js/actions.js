@@ -87,6 +87,19 @@ var prize3Action = function(){
 };
 var prizeActions = [prize1Action, prize2Action, prize3Action];
 
+var addPrizeClick = function(i){
+	$('#prizeClick' + i).click(function(){
+			$('div#prize' + i).css("visibility", "visible");
+			chewablePrizes[i - 1] = true;
+		});
+}
+
+for (var i = 1; i <= 3; i++){
+	addPrizeClick(i);
+}
+
+/*
+
 $('#prizeClick1').click(function(){
 			$('div#prize1').css("visibility", "visible");
 			chewablePrizes[0] = true;
@@ -101,6 +114,7 @@ $('#prizeClick3').click(function(){
 			$('div#prize3').css("visibility", "visible");
 			chewablePrizes[2] = true;
 		});
+*/
 
 var addClickHandler = function(i, j){
 	 $('div#' + i.toString() + "r" + j.toString()).click(function(){
